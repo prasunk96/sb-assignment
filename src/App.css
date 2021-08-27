@@ -2,38 +2,25 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
-
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-.App-link {
-  color: rgb(112, 76, 182);
-}
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+:root {
+  --background-blue: transparent linear-gradient(248deg, #303F60 0%, #1A253C 100%) 0% 0% no-repeat padding-box;
+  --background-grey: #EDF6FF 0% 0% no-repeat padding-box;
+  --font-weight-light: 400;
+  --font-weight-regular: 500;
+  --font-weight-bold: 600;
+  --color-blue-semi: #4D618E;
+  --color-blue-semi-dark: #303F60;
+  --color-blue-dark: #1A253C;
+  --color-light-grey: #EDF6FF;
+  --color-blue-light: #43AFFF;
+  --color-blue-faded: #43AFFF33;
+  --color-grey: #557DA526;
+  --font-size-16: 16px;
+  --font-size-22: 22px;
+  --font-size-14: 14px;
+  --font-size-60: 60px;
+  --line-spacing-74: 74;
+  --line-spacing-27: 27;
+  --line-spacing-20: 20;
+  --line-spacing-19: 19;
 }

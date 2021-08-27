@@ -1,0 +1,17 @@
+.button {
+    border-radius: 5px;
+    color: white;
+    padding: 13px 23px 14px 23px;
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-bold);
+}
+
+.buttonStyle {
+    background: #43AFFF33 0% 0% no-repeat padding-box;
+    border: 1px solid #43AFFF;
+}
+
+.buttonStyleSecondary {
+    background: #43AFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #43AFFF;
+}

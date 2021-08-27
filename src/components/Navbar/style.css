@@ -1,0 +1,14 @@
+.navbar {
+    background: none;
+    border-bottom: 1px solid #4D618E;
+    height: 70px;
+}
+
+.logo {
+    font-size: var(--font-size-22);
+    font-weight: var(--font-weight-bold);
+}
+
+.logoStyle {
+    color: var(--color-blue-light)
+}
