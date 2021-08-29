@@ -1,0 +1,1 @@
+export const IS_RESET_TOKEN_VALID = 'IS_RESET_TOKEN_VALID';

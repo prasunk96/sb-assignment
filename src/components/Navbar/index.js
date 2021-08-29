@@ -11,7 +11,11 @@ const Navbar = () => {
                     <Link to="/" class="logo">My<span className="logoStyle">Jobs</span></Link>
                 </div>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><Button type="primary" label={'Login/Signup'}/></li>
+                    <li>
+                        <Link to="/login">
+                            <Button type="primary" label={'Login/Signup'}/>
+                        </Link>
+                    </li>
                 </ul>
             </div>
       </nav>

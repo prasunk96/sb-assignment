@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import './style.css';
 
-const Button = ({label, type, customStyle}) => {
+const Button = ({label, type, customStyle, onClick}) => {
     const [style, setStyle] = useState(customStyle);
     useState(() => {
         switch(type) {
@@ -18,7 +18,7 @@ const Button = ({label, type, customStyle}) => {
     }, []);
 
     return (
-        <button className={`button ${style}`}>{label}</button>
+        <button onClick={onClick} className={`button ${style}`}>{label}</button>
     )
 }
 
