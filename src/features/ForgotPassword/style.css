@@ -1,4 +1,4 @@
-.loginContainer {
+.resetContainer {
     height: 100vh;
     padding: 160px 441px 313px 442px;
     overflow: hidden;
@@ -9,7 +9,7 @@
     justify-content: center;
 }
 
-.loginContainer::before {
+.resetContainer::before {
     content: '';
     position: absolute;
     width: 100vw;
@@ -21,55 +21,73 @@
     background-image: linear-gradient(248deg, #303F60 0%, #1A253C 100%);
 }
 
-.loginFormCard {
+.forgotPassowordContainer {
     z-index: 1000;
     position: absolute;
-    width: 562px;
-    height: 427px;
+    width: 557px;
+    height: 318px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 30px 36px #557DA526;
     border-radius: 20px;
     padding: 30px;
     text-align: left;
+    color: #303F60;
 }
 
-.loginFormCard > h3 {
+
+.resetPasswordContainer {
+    z-index: 1000;
+    position: absolute;
+    height: 408px;
+    width: 557px;
+    position: absolute;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 30px 36px #557DA526;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: left;
+    color: #303F60;
+}
+
+.forgotPassowordContainer > h3, .resetPasswordContainer > h3 {
     font-size: 22px;
     font-weight: 600;
-    margin-bottom: 23px;
+    margin-bottom: 20px !important;
+    display: block;
 }
 
-.loginFormFooter > h6 {
-    text-align: center;
-    letter-spacing: 0px;
-    color: #303F60;
-    font-size: 16px;
-}
-
-.loginFormCard > label > div {
+.forgotPassowordContainer > p, .resetPasswordContainer > p {
     font-size: 14px;
-    text-align: left;
+}
+
+.forgotPassowordContainer > label, .resetPasswordContainer > label {
+    display: block;
+    margin-top: 20px !important;
+}
+
+.forgotPassowordContainer > label > span, .resetPasswordContainer > label > span {
+    font-size: 14px;
     letter-spacing: 0px;
     color: #303F60;
-    margin-top: 23px;
-    display: flex;
-    justify-content: space-between;
+    display: block;
+    margin-bottom: 8px;
 }
 
 .inputField {
     background: #E8E8E833 0% 0% no-repeat padding-box;
     border: 1px solid #C6C6C6 !important;
     border-radius: 5px !important;
+    /* padding-left: 5px !important; */
 }
 
-.loginButtonContainer {
+.signupButtonContainer {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 40px;
 }
 
-.loginButton {
+.signupButton {
     width: 148px;
     height: 46px;
     color: white;
@@ -78,11 +96,4 @@
     background: #43AFFF 0% 0% no-repeat padding-box;
     border: 1px solid #43AFFF;
     border-radius: 5px;
-}
-
-.loginFormFooter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 53px;
 }

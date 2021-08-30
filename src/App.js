@@ -8,25 +8,33 @@ import Homepage from './features/Homepage';
 import Login from './features/Login';
 import Signup from './features/Signup';
 import Reset from './features/ForgotPassword/index';
+import Navbar from './components/Navbar';
+import JobsDashboard from './features/JobDashboard';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <Homepage />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/signup">
-            <Signup />
-          </Route>
-          <Route exact path="/resetpassword">
-            <Reset />
-          </Route>
-        </Switch>
+      <div className="navContainer">
+        <Navbar />
+        </div>
+          <Switch>
+            <Route exact path="/">
+              <Homepage />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
+            </Route>
+            <Route exact path="/resetpassword">
+              <Reset />
+            </Route>
+            <Route path="/:username/dashboard">
+              <JobsDashboard />
+            </Route>
+          </Switch>
       </Router>
     </div>
   );

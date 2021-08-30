@@ -1,7 +1,8 @@
-import { IS_RESET_TOKEN_VALID } from './actionTypes';
+import { IS_RESET_TOKEN_VALID, SET_POSTED_JOBS } from './actionTypes';
 
 const initialState = {
-    isResetTokenValid: false
+    isResetTokenValid: false,
+    postedJobs: []
 }
 
 const reducer = (
@@ -13,6 +14,11 @@ const reducer = (
             return {
                 ...state,
                 isResetTokenValid: action.payload
+            }
+        case SET_POSTED_JOBS:
+            return {
+                ...state,
+                postedJobs: action.payload
             }
         default:
             return {

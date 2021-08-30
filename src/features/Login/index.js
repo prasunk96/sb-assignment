@@ -1,11 +1,12 @@
 import React from 'react'
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { login } from '../../services/auth/auth';
 import './style.css'
 
 const Login = () => {
+    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const handleFormSubmit = () => {
@@ -13,7 +14,7 @@ const Login = () => {
             email: email,
             password: password
         }
-        login(loginUserObject);
+        login(loginUserObject, history);
     }
     return (
         <div className="loginContainer">

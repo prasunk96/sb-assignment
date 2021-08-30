@@ -2,6 +2,9 @@
     background: none;
     border-bottom: 1px solid #4D618E;
     height: 70px;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {

@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '../../components/Button';
-import Navbar from '../../components/Navbar';
+// import Navbar from '../../components/Navbar';
 import Content from './Content';
 
 import { Link } from 'react-router-dom';
@@ -11,7 +11,7 @@ const Homepage = () => {
     return (
         <div className="mainContainer">
             <div className="landing">
-                <Navbar />
+                {/* <Navbar /> */}
                 <section className="landingSectionOne">
                     <div className="logoContainer">
                         <h1>Welcome to<br/>

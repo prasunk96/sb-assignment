@@ -15,18 +15,20 @@ const ResetForm = () => {
         resetPassword(obj);
     }
     return (
-        <div className="submitFormContainer">
-            <h4>Reset You Password</h4>
-            <h6>Enter your new password below.</h6>
+        <div className="resetPasswordContainer">
+            <h3>Reset You Password</h3>
+            <p>Enter your new password below.</p>
             <label>
                 <span>New Password</span>
-                <input type="password" placeholder="Enter you password" onChange={(e) => setPassword(e.target.value)} />
+                <input className="inputField" type="password" placeholder="Enter you password" onChange={(e) => setPassword(e.target.value)} />
             </label>
             <label>
                 <span>Confirm new password</span>
-                <input type="password" placeholder="Enter you password" onChange={(e) => setCofirmPassword(e.target.value)} />
+                <input className="inputField" type="password" placeholder="Enter you password" onChange={(e) => setCofirmPassword(e.target.value)} />
             </label>
-                <button onClick={handleFormSubmit}>Reset</button>
+            <div className='signupButtonContainer'>
+                <button className="signupButton" onClick={handleFormSubmit}>Reset</button>
+            </div>
         </div>
     )
 }

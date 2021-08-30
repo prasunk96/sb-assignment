@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.navContainer {
+  position: relative;
+  margin: 0px 70px;
+}
+
 :root {
   --background-blue: transparent linear-gradient(248deg, #303F60 0%, #1A253C 100%) 0% 0% no-repeat padding-box;
   --background-grey: #EDF6FF 0% 0% no-repeat padding-box;
