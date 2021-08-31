@@ -2,7 +2,7 @@ import { IS_RESET_TOKEN_VALID, SET_POSTED_JOBS } from './actionTypes';
 
 const initialState = {
     isResetTokenValid: false,
-    postedJobs: []
+    postedJobs: [],
 }
 
 const reducer = (

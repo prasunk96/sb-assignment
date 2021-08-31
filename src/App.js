@@ -10,6 +10,7 @@ import Signup from './features/Signup';
 import Reset from './features/ForgotPassword/index';
 import Navbar from './components/Navbar';
 import JobsDashboard from './features/JobDashboard';
+import PostJob from './features/PostJob';
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
             </Route>
             <Route path="/:username/dashboard">
               <JobsDashboard />
+            </Route>
+            <Route path="/:username/postjob">
+              <PostJob />
             </Route>
           </Switch>
       </Router>

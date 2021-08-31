@@ -15,3 +15,62 @@
 .logoStyle {
     color: var(--color-blue-light)
 }
+
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    
+    border-top: 8px solid #fff;
+    cursor: pointer;
+}
+
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    
+    border-bottom: 10px solid rgb(255, 255, 255);
+    position: absolute;
+    top: -7px;
+    right: 8px;
+  }
+
+.dropdownContainer {
+    height: 100%;
+    margin: 31px 0px;
+    position: relative;
+}
+
+.dropdown {
+    width: 112px;
+    height: 47px;
+    position: absolute;
+    top: 40px;
+    right: -10px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    text-align: left;
+    letter-spacing: 0px;
+    color: #303F60;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.dropdownItem {
+    padding-left: 12px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.dropdownItem:hover {
+    background: rgba(0, 0, 0, 0.055);
+}

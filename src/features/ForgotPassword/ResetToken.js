@@ -15,7 +15,7 @@ const ResetToken = () => {
             <p>Enter the email associated with your account and we’ll send you instructions to reset your password.</p>
             <label>
                 <span>Email address</span>
-                <input className="inputField" type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" />
+                <input className="inputField" type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} />
             </label>
             <div className="signupButtonContainer">
                 <button className="signupButton" onClick={handleSubmit}>Submit</button>
