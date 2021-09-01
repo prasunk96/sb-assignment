@@ -98,3 +98,23 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
+
+.nameError {
+    color: red;
+    top: 230px;
+}
+
+.emailError {
+    color: red;
+    top: 330px;
+}
+
+.passwordError {
+    color: red;
+    top: 428px;
+}
+
+.otherError {
+    color: red;
+    top: 525px;
+}

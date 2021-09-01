@@ -1,6 +1,6 @@
 import axios from '../apiUtils';
 import { USER_TOKEN, USER_DATA, RESET_TOKEN, base_url, IS_LOGGED_IN, RESET_ALLOWED } from '../../constants';
-import { setIsResetTokenValid, setLoginErrror } from '../../app/actions';
+import { setIsResetTokenValid, setLoginErrror, setSignupErrror } from '../../app/actions';
 
 export const login = (data, history, dispatch) => {
     const url = `/auth/login`;
@@ -15,12 +15,16 @@ export const login = (data, history, dispatch) => {
     })
 }
 
-export const signup = (data) => {
+export const signup = (data, history, dispatch) => {
     const url = `/auth/register`;
     axios.post(url, data).then(response => {
         sessionStorage.setItem(USER_TOKEN, JSON.stringify((response.data.data.token)));
         sessionStorage.setItem(USER_DATA, JSON.stringify(response.data.data));
-    });
+        history.push('/login');
+    }).catch(error=> {
+        console.log(error);
+        dispatch(setSignupErrror(error.response.data));
+    })
 }
 
 export const getResetToken = (data, dispatch) => {

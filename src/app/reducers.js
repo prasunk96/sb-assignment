@@ -1,10 +1,11 @@
-import { IS_RESET_TOKEN_VALID, SET_CANDIDATE_LIST, SET_POSTED_JOBS, SET_LOGIN_ERROR } from './actionTypes';
+import { IS_RESET_TOKEN_VALID, SET_CANDIDATE_LIST, SET_POSTED_JOBS, SET_LOGIN_ERROR, SET_SIGNUP_ERROR } from './actionTypes';
 
 const initialState = {
     isResetTokenValid: false,
     postedJobs: [],
     candidateList: [],
-    loginError: ''
+    loginError: '',
+    signupError: {}
 }
 
 const reducer = (
@@ -31,6 +32,11 @@ const reducer = (
             return {
                 ...state,
                 loginError: action.payload
+            }
+        case SET_SIGNUP_ERROR:
+            return {
+                ...state,
+                signupError: action.payload
             }
         default:
             return {
