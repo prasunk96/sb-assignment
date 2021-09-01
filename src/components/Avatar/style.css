@@ -6,13 +6,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 12px 15px;
 }
 
 .initials {
     text-align: center;
     letter-spacing: 0px;
-    color: #303F60;
     opacity: 0.8;
-    font-size: 18px;
+    font-size: var(--font-size-18);
+    color: var(--color-blue-semi-dark);
  }

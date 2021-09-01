@@ -1,0 +1,21 @@
+.inputField {
+    background: #E8E8E833 0% 0% no-repeat padding-box;
+    border: 1px solid #C6C6C6 !important;
+    border-radius: 5px !important;
+    color: #303F60 !important;
+    padding-left: 5px !important;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+}
+
+label > span {
+    font-size: var(--font-size-14);
+    letter-spacing: 0px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+

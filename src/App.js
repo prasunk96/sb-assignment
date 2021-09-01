@@ -32,10 +32,10 @@ function App() {
             <Route exact path="/resetpassword">
               <Reset />
             </Route>
-            <Route path="/:username/dashboard">
+            <Route exact path="/:username/dashboard">
               <JobsDashboard />
             </Route>
-            <Route path="/:username/postjob">
+            <Route exact path="/:username/postjob">
               <PostJob />
             </Route>
           </Switch>

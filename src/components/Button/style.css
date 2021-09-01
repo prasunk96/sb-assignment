@@ -6,12 +6,21 @@
     font-weight: var(--font-weight-bold);
 }
 
+
 .buttonStyle {
-    background: #43AFFF33 0% 0% no-repeat padding-box;
-    border: 1px solid #43AFFF;
+    background: var(--color-blue-faded) 0% 0% no-repeat padding-box;
+    border: 1px solid var(--color-blue-light);
+}
+
+.buttonStyle:focus {
+    background-color: var(--color-blue-faded) 0% 0% no-repeat padding-box;
 }
 
 .buttonStyleSecondary {
-    background: #43AFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #43AFFF;
+    background: var(--color-blue-light) 0% 0% no-repeat padding-box;
+    border: 1px solid var(--color-blue-light);
+}
+
+.buttonStyleSecondary:focus {
+    background: var(--color-blue-light) 0% 0% no-repeat padding-box;
 }

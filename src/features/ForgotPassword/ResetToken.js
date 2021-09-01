@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getResetToken } from '../../services/auth/auth';
 import './style.css';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 const ResetToken = () => {
     const dispatch = useDispatch();
@@ -13,12 +15,9 @@ const ResetToken = () => {
         <div className="forgotPassowordContainer">
             <h3>Forgot you password?</h3>
             <p>Enter the email associated with your account and we’ll send you instructions to reset your password.</p>
-            <label>
-                <span>Email address</span>
-                <input className="inputField" type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} />
-            </label>
+            <Input label="Enter you password" type="email" placeholder="Enter your email" onInputChange={setEmail} />
             <div className="signupButtonContainer">
-                <button className="signupButton" onClick={handleSubmit}>Submit</button>
+                <Button label="Submit" type="secondary" onClick={handleSubmit} />
             </div>
         </div>
     )

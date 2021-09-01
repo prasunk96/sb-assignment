@@ -1,0 +1,118 @@
+.candidateListModal {
+    position: fixed;
+    z-index: 2000;
+    background: #00000038;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.candidateListContainer {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 30px 36px var(--color-grey);
+    border-radius: 20px;
+    width: 694px;
+    height: 731px;
+    padding: 25px;
+}
+
+.candidateListContainerHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(158, 158, 158, 0.308);
+    padding-bottom: 15px;
+}
+
+.candidateListContainerHeader > h3 {
+    text-align: left;
+    letter-spacing: 0px;
+    font-size: var(--font-size-22);
+    font-weight: var(--font-weight-bold);
+}
+
+.material-icons {
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+}
+
+.candidateListBodyContainer {
+    height: inherit;
+}
+
+.candidateListBodyContainer > h6 {
+    text-align: left;
+    letter-spacing: 0px;
+    margin: 15px 0px 10px 0px!important;
+}
+
+.candidateList {
+    background: #a9afbc41 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    width: 650px;
+    height: 598px;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 8px;
+}
+
+.candidateCard {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #303F6080;
+    border-radius: 5px;
+    width: 302px;
+    height: 159px;
+    display: flex;
+    padding: 10px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.candidateDetials {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.candidateName {
+    margin-left: 20px;
+}
+
+.candidateName > h3 {
+    text-align: left;
+    letter-spacing: 0px;
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-bold);
+}
+
+.candidateName > h6 {
+    font-size: var(--font-size-16);
+    text-align: left;
+    letter-spacing: 0px;
+}
+
+.skillsContainer {
+    margin-top: 40px;
+}
+
+.skillsContainer > h6 {
+    text-align: left;
+    letter-spacing: 0px;
+    font-size: var(--font-size-12);
+    font-weight: var(--font-weight-bold);
+}
+
+.skillsContainer > p {
+    margin: 0px;
+    text-align: left;
+    text-align: left;
+    letter-spacing: 0px;
+    font-size: var(--font-size-16);
+}

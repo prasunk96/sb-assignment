@@ -1,25 +1,3 @@
-.resetContainer {
-    height: 100vh;
-    padding: 160px 441px 313px 442px;
-    overflow: hidden;
-    position: relative;
-    background: linear-gradient(0deg, #EDF6FF 0%, #EDF6FF 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.resetContainer::before {
-    content: '';
-    position: absolute;
-    width: 100vw;
-    height: 50vh;
-    top: 0%;
-    left: 0%;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(248deg, #303F60 0%, #1A253C 100%);
-}
 
 .forgotPassowordContainer {
     z-index: 1000;
@@ -27,11 +5,10 @@
     width: 557px;
     height: 318px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 30px 36px #557DA526;
+    box-shadow: 0px 30px 36px var(--color-grey);
     border-radius: 20px;
     padding: 30px;
     text-align: left;
-    color: #303F60;
 }
 
 
@@ -42,58 +19,26 @@
     width: 557px;
     position: absolute;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 30px 36px #557DA526;
+    box-shadow: 0px 30px 36px var(--color-grey);
     border-radius: 20px;
     padding: 30px;
     text-align: left;
-    color: #303F60;
 }
 
 .forgotPassowordContainer > h3, .resetPasswordContainer > h3 {
-    font-size: 22px;
-    font-weight: 600;
+    font-size: var(--font-size-22);
+    font-weight: var(--font-weight-bold);
     margin-bottom: 20px !important;
     display: block;
 }
 
 .forgotPassowordContainer > p, .resetPasswordContainer > p {
-    font-size: 14px;
-}
-
-.forgotPassowordContainer > label, .resetPasswordContainer > label {
-    display: block;
-    margin-top: 20px !important;
-}
-
-.forgotPassowordContainer > label > span, .resetPasswordContainer > label > span {
-    font-size: 14px;
-    letter-spacing: 0px;
-    color: #303F60;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.inputField {
-    background: #E8E8E833 0% 0% no-repeat padding-box;
-    border: 1px solid #C6C6C6 !important;
-    border-radius: 5px !important;
-    /* padding-left: 5px !important; */
+    font-size: var(--font-size-14);
 }
 
 .signupButtonContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
-}
-
-.signupButton {
-    width: 148px;
-    height: 46px;
-    color: white;
-    font-size: 16px;
-    border: 1px solid var(--unnamed-color-43afff);
-    background: #43AFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #43AFFF;
-    border-radius: 5px;
+    margin-top: 30px;
 }

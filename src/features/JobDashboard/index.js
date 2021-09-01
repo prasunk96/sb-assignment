@@ -3,14 +3,21 @@ import './style.css';
 import { fetchPostedJobs } from '../../services/recruiter';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import Breadcrumb from '../../components/Breadcrumb';
+import { USER_DATA } from '../../constants';
+import CandidateList from '../CandidateList';
 
 const JobsDashboard = () => {
     const dispatch = useDispatch();
     const params = useParams();
+    const userData = JSON.parse(sessionStorage.getItem(USER_DATA));
     const { postedJobs } = useSelector(state => state.app);
     const [ currentPage, setCurrentPage ] = useState(1);
     const [pageData, setPageData] = useState([]);
+    const [currentViewingJobId, setCurrentViewingJobId] = useState('');
     const totalPages = Math.ceil(postedJobs.length/10);
+
+    const [isViewApplicants, setIsViewApplicants] = useState(false);
     useEffect(() => {
         fetchPostedJobs(dispatch);
     },[]);
@@ -32,7 +39,7 @@ const JobsDashboard = () => {
     },[currentPage, postedJobs])
     const range = (start, end) => new Array(end-start+1).fill().map((el, ind) => ind + start);
     const handlePrevious = () => {
-        if(currentPage !== 0) {
+        if(currentPage !== 1) {
             setCurrentPage(currentPage - 1);
         }
     }
@@ -41,10 +48,14 @@ const JobsDashboard = () => {
             setCurrentPage(currentPage + 1);
         }
     }
+    const handleViewApplicants = (id) => {
+        setCurrentViewingJobId(id);
+        setIsViewApplicants(true);
+    }
     return (
-        <div className="JobDashboardContainer">
+        <div className="pagesMainContainer JobDashboardContainer">
             <div className="JobDashboardContent">
-                <h6>Home</h6>
+                <Breadcrumb linkList={[{name: 'Home', link: `/${userData.name}/dashboard`}]}/>
                 <h3>Jobs posted by you</h3>
                 {pageData.length ? <><div className="JobsContainer">
                     {pageData.map(item => <div className="jobCard">
@@ -53,15 +64,15 @@ const JobsDashboard = () => {
                         <div className="jobCardFooter">
                             <div className="jobLocationContainer">{item.location}</div>
                             <div>
-                                <button className="viewApplicationButton">View Applications</button>
+                                <button className="viewApplicationButton" onClick={() => handleViewApplicants(item.id)}>View Applications</button>
                             </div>
                         </div>
                     </div>)}
                 </div>
                 <ul className="pagination paginationul">
-                    <li onClick={handlePrevious} className={`${currentPage === 1 ? 'disabled' : 'waves-effect'}`}><a href="#!"><i className="material-icons">chevron_left</i></a></li>
+                    <li onClick={handlePrevious} className={`${currentPage === 1 ? 'disabled' : 'waves-effect'}`}><span><i className="material-icons">chevron_left</i></span></li>
                     {range(1, totalPages).map(item => <li id={`${item}`} key={item} className={`${currentPage === item ? 'active' : 'waves-effect'}`} onClick={() => setCurrentPage(item)}><a href="#!">{item}</a></li>)}
-                    <li onClick={handleNext} className={`${currentPage === totalPages ? 'disabled' : 'waves-effect'}`}><a href="#!"><i className="material-icons">chevron_right</i></a></li>
+                    <li onClick={handleNext} className={`${currentPage === totalPages ? 'disabled' : 'waves-effect'}`}><span><i className="material-icons">chevron_right</i></span></li>
                 </ul></>
                 : <div className="noJobContainer">
                     <h6>Your posted jobs will show here!</h6>
@@ -69,6 +80,7 @@ const JobsDashboard = () => {
                 </div>
                 }
             </div>
+            {isViewApplicants && <CandidateList handleClose={setIsViewApplicants} currentViewingJobId={currentViewingJobId}/>}
         </div>
     )
 }

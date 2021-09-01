@@ -1,24 +1,25 @@
 import axios from '../apiUtils';
 import { USER_TOKEN, USER_DATA, RESET_TOKEN, base_url, IS_LOGGED_IN, RESET_ALLOWED } from '../../constants';
-import { setIsResetTokenValid } from '../../app/actions';
+import { setIsResetTokenValid, setLoginErrror } from '../../app/actions';
 
-export const login = (data, history) => {
+export const login = (data, history, dispatch) => {
     const url = `/auth/login`;
     axios.post(url, data).then(response => {
-        localStorage.setItem(USER_TOKEN, JSON.stringify(response.data.data.token));
-        localStorage.setItem(USER_DATA, JSON.stringify(response.data.data));
-        localStorage.setItem(IS_LOGGED_IN, true);
-        history.push(`/${response.data.data.name}/dashboard`)
+        sessionStorage.setItem(USER_TOKEN, JSON.stringify(response.data.data.token));
+        sessionStorage.setItem(USER_DATA, JSON.stringify(response.data.data));
+        sessionStorage.setItem(IS_LOGGED_IN, true);
+        history.push(`/${response.data.data.name}/dashboard`);
     }).catch(error => {
         console.log(error);
+        dispatch(setLoginErrror(error.response.data.message));
     })
 }
 
 export const signup = (data) => {
     const url = `/auth/register`;
     axios.post(url, data).then(response => {
-        localStorage.setItem(USER_TOKEN, JSON.stringify((response.data.data.token)));
-        localStorage.setItem(USER_DATA, JSON.stringify(response.data.data));
+        sessionStorage.setItem(USER_TOKEN, JSON.stringify((response.data.data.token)));
+        sessionStorage.setItem(USER_DATA, JSON.stringify(response.data.data));
     });
 }
 
@@ -36,18 +37,19 @@ export const getResetToken = (data, dispatch) => {
     }).then(response => {
         if(response.res.data.success) {
             dispatch(setIsResetTokenValid(true));
-            localStorage.setItem(RESET_TOKEN, JSON.stringify(response.token));
+            sessionStorage.setItem(RESET_TOKEN, JSON.stringify(response.token));
         }
     }).catch(error => {
         console.error(error);
     })
 }
 
-export const resetPassword = (data) => {
+export const resetPassword = (data, history) => {
     const url = `${base_url}/auth/resetpassword`;
     axios.post(url, data).then(response => {
         if(response.data.success) {
-            localStorage.removeItem(RESET_TOKEN);
+            sessionStorage.removeItem(RESET_TOKEN);
+            history.push('/login');
         }
     }).catch(error => {
         console.log(error);
@@ -55,10 +57,10 @@ export const resetPassword = (data) => {
 }
 
 export const handleLogout = (history) => {
-    localStorage.removeItem(USER_DATA);
-    localStorage.removeItem(USER_TOKEN);
-    localStorage.removeItem(RESET_TOKEN);
-    localStorage.removeItem(RESET_ALLOWED);
-    localStorage.removeItem(IS_LOGGED_IN);
+    sessionStorage.removeItem(USER_DATA);
+    sessionStorage.removeItem(USER_TOKEN);
+    sessionStorage.removeItem(RESET_TOKEN);
+    sessionStorage.removeItem(RESET_ALLOWED);
+    sessionStorage.removeItem(IS_LOGGED_IN);
     history.push('/');
 }

@@ -1,83 +1,32 @@
-.loginContainer {
-    height: 100vh;
-    padding: 160px 441px 313px 442px;
-    overflow: hidden;
-    position: relative;
-    background: linear-gradient(0deg, #EDF6FF 0%, #EDF6FF 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.loginContainer::before {
-    content: '';
-    position: absolute;
-    width: 100vw;
-    height: 50vh;
-    top: 0%;
-    left: 0%;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(248deg, #303F60 0%, #1A253C 100%);
-}
-
 .loginFormCard {
     z-index: 1000;
     position: absolute;
     width: 562px;
     height: 427px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 30px 36px #557DA526;
+    box-shadow: 0px 30px 36px var(--color-grey);
     border-radius: 20px;
     padding: 30px;
     text-align: left;
 }
 
 .loginFormCard > h3 {
-    font-size: 22px;
-    font-weight: 600;
+    font-size: var(--font-size-22);
+    font-weight: var(--font-weight-bold);
     margin-bottom: 23px;
 }
 
 .loginFormFooter > h6 {
     text-align: center;
     letter-spacing: 0px;
-    color: #303F60;
-    font-size: 16px;
-}
-
-.loginFormCard > label > div {
-    font-size: 14px;
-    text-align: left;
-    letter-spacing: 0px;
-    color: #303F60;
-    margin-top: 23px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.inputField {
-    background: #E8E8E833 0% 0% no-repeat padding-box;
-    border: 1px solid #C6C6C6 !important;
-    border-radius: 5px !important;
+    font-size: var(--font-size-16);
 }
 
 .loginButtonContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
-}
-
-.loginButton {
-    width: 148px;
-    height: 46px;
-    color: white;
-    font-size: 16px;
-    border: 1px solid var(--unnamed-color-43afff);
-    background: #43AFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #43AFFF;
-    border-radius: 5px;
+    margin-top: 30px;
 }
 
 .loginFormFooter {
@@ -85,4 +34,15 @@
     align-items: center;
     justify-content: center;
     margin-top: 53px;
+}
+
+.forgotPasswordLink {
+    position: absolute;
+    right: 30px;
+    top: 175px;
+}
+
+.incorrectErrorMessage {
+    top: 245px;
+    color: red;
 }

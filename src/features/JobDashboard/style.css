@@ -1,25 +1,10 @@
 .JobDashboardContainer {
-    height: 100vh;
     padding: 83px 173px 0px 173px;
-    overflow: hidden;
-    position: relative;
-    background: linear-gradient(0deg, #EDF6FF 0%, #EDF6FF 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #303F60;
 }
 
 .JobDashboardContainer::before {
-    content: '';
-    position: absolute;
     width: 100vw;
     height: 30vh;
-    top: 0%;
-    left: 0%;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(248deg, #303F60 0%, #1A253C 100%);
 }
 
 .JobDashboardContent {
@@ -34,7 +19,7 @@
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 0.8;
-    font-size: 12px;
+    font-size: var(--font-size-12);
 }
 
 .JobDashboardContent > h3 {
@@ -42,15 +27,13 @@
     font: normal normal medium 22px/27px Helvetica Neue;
     letter-spacing: 0px;
     color: #FFFFFF;
-    font-size: 22px;
-    font-weight: 500;
+    font-size: var(--font-size-22);
+    font-weight: var(--font-weight-regular);
     letter-spacing: 0.06em;
-    margin-top: 24px !important;
 }
 
 .JobsContainer {
-    margin-top: 20px;
-    color: #303F60;
+    margin-top: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 18px;
@@ -60,29 +43,27 @@
     min-width: 260px;
     height: 170px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #557DA526;
+    box-shadow: 0px 3px 6px var(--color-grey);
     border-radius: 5px;
     padding: 15px;
 }
 
 .jobCard > h4 {
-    font-size: 17px;
+    font-size: var(--font-size-16);
     text-align: left;
     letter-spacing: 0px;
-    color: #303F60;
     margin: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    font-weight: 600;
+    font-weight: var(--font-weight-bold);
     margin-bottom: 10px !important;
 }
 
 .jobCard > p {
-    font-size: 14px;
+    font-size: var(--font-size-14);
     text-align: left;
     letter-spacing: 0px;
-    color: #303F60;
     opacity: 0.8;
     min-height: 60px;
 }
@@ -101,11 +82,10 @@
 }
 
 .jobLocationContainer {
-    font-size: 14px;
+    font-size: var(--font-size-14);
     text-align: left;
     letter-spacing: 0px;
-    color: #303F60;
-    font-weight: 600;
+    font-weight: var(--font-weight-bold);
     margin: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -113,14 +93,13 @@
 }
 
 .viewApplicationButton {
-    background: #43AFFF33 0% 0% no-repeat padding-box;
+    background: var(--color-blue-faded) 0% 0% no-repeat padding-box;
     border-radius: 5px;
     padding: 5px;
     text-align: center;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: var(--font-size-12);
+    font-weight: var(--font-weight-bold);
     letter-spacing: 0px;
-    color: #303F60;
     text-transform: capitalize;
     border: none;
     height: 32px;
@@ -129,7 +108,7 @@
 }
 
 .pagination li.active {
-    background-color: #43AFFF;
+    background-color: var(--color-blue-light);
 }
 
 .paginationul {
@@ -150,10 +129,9 @@
 .noJobContainer > h6 {
     text-align: center;
     letter-spacing: 0px;
-    color: #303F60;
     opacity: 0.8;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: var(--font-size-22);
+    font-weight: var(--font-weight-regular);
     margin-bottom: 40px !important;
 }
 
@@ -161,9 +139,8 @@
     width: 148px;
     height: 46px;
     color: white;
-    font-size: 16px;
-    border: 1px solid var(--unnamed-color-43afff);
-    background: #43AFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #43AFFF;
+    font-size: var(--font-size-16);
+    background: var(--color-blue-light) 0% 0% no-repeat padding-box;
+    border: 1px solid var(--color-blue-light);
     border-radius: 5px;
 }

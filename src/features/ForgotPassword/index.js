@@ -8,7 +8,7 @@ import './style.css';
 const Reset = () => {
     const { isResetTokenValid } = useSelector(state => state.app)
     return (
-        <div className="resetContainer">
+        <div className="pagesMainContainer">
             {isResetTokenValid ? <ResetForm /> : <ResetToken />}
         </div>
     )

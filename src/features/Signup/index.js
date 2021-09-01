@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { signup } from '../../services/auth/auth';
 import './style.css';
 
+import Input from '../../components/Input';
+import Button from '../../components/Button';
+
 const Signup = () => {
     const [userType, setUserType] = useState(0);
     const [fullName, setFullName] = useState('');
@@ -22,7 +25,7 @@ const Signup = () => {
         signup(signupUserObject);
     }
     return (
-        <div className="submitFormContainer">
+        <div className="pagesMainContainer" style={{ padding: '100px 441px 100px 442px' }}>
             <div className="signupFormContainer">
                 <h3>Signup</h3>
                 <h6 className="userTypeHeading">I'm a</h6>
@@ -40,28 +43,15 @@ const Signup = () => {
                         </label>
                     </div>
                 </div>
-                <label>
-                    <span>Full Name</span>
-                    <input className="inputField" type='text' placeholder="Enter your full name" onChange={(e) => setFullName(e.target.value)} />
-                </label>
-                <label>
-                    <span>Email Address</span>
-                    <input className="inputField" type='email' placeholder="mail@mail.com" onChange={(e) => setEmail(e.target.value)} />
-                </label>
-                <label>
-                    <span>Create Password</span>
-                    <input className="inputField" type='password' placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} />
-                </label>
-                <label>
-                    <span>Confirm Password</span>
-                    <input className="inputField" type='password' placeholder="Enter your password" onChange={(e) => setCofirmPassword(e.target.value)} />
-                </label>
-                <label>
-                    <span>Skills</span>
-                    <input className="inputField" type='text' placeholder="Enter comma separated skills" onChange={(e) => setSkills(e.target.value)} />
-                </label>
+                    <Input required={true} value={fullName} label="Full Name" type='text' placeholder="Enter your full name" onInputChange={setFullName} />
+                    <Input required={true} value={email} label="Email Address" type='email' placeholder="mail@mail.com" onInputChange={setEmail} />
+                    <div className="passwordGroupContainer">
+                        <Input required={true} value={password} label="Create Password" type='password' placeholder="Enter your password" onInputChange={setPassword} />
+                        <Input required={true} value={confirmPassword} label="Confirm Password" type='password' placeholder="Enter your password" onInputChange={setCofirmPassword} />
+                    </div>
+                    <Input value={skills} label="Skills" type='text' placeholder="Enter comma separated skills" onInputChange={setSkills} />
                 <div className="signupButtonContainer">
-                    <button className="signupButton" onClick={handleFormSubmit}>Signup</button>
+                    <Button type="secondary" onClick={handleFormSubmit} label="Signup" />
                 </div>
                 <div className="signupFormFooter">
                     <h6>have an account? <Link to="/login">Login</Link></h6>

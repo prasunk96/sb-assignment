@@ -1,6 +1,6 @@
 .navbar {
     background: none;
-    border-bottom: 1px solid #4D618E;
+    border-bottom: 1px solid var(--color-blue-semi);
     height: 70px;
     position: absolute;
     top: 0;
@@ -53,12 +53,11 @@
     background: #FFFFFF 0% 0% no-repeat padding-box;
     text-align: left;
     letter-spacing: 0px;
-    color: #303F60;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: var(--font-size-14);
     cursor: pointer;
 }
 
@@ -69,8 +68,23 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    color: var(--color-blue-semi-dark);
 }
 
 .dropdownItem:hover {
     background: rgba(0, 0, 0, 0.055);
+}
+
+.activeNavTab {
+    position: relative;
+}
+
+.activeNavTab::after {
+    content: '';
+    display: block;
+    left: 20px;
+    height: 5px;
+    width: 60%;
+    background: var(--color-blue-light);
+    position: absolute;
 }

@@ -1,0 +1,9 @@
+.breadcrumbNav {
+    background-color: transparent;
+    box-shadow: none;
+    display: flex;
+}
+
+.breadcrumb {
+    font-size: var(--font-size-12);
+}
